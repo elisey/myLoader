@@ -30,6 +30,12 @@ void Uart_Init()
 	USART_Cmd(USART2, ENABLE);
 }
 
+void Uart_Deinit()
+{
+	GPIO_DeInit(GPIOA);
+	USART_DeInit(USART2);
+}
+
 void Uart_SendByte(uint8_t byte)
 {
 	USART_SendData( USART2, byte );
